@@ -39,7 +39,13 @@ function initialPrompt() {
 }
 
 let simpleScore = function(word){
-  let score = word.length;
+  for (i in word){
+    if (word[i] === ' ') {
+      score = score;
+    }
+  } else{
+    score++;
+  }
   return score;
 }
 
