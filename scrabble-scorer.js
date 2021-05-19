@@ -83,15 +83,15 @@ let scrabbleScore = function(){
 const scoringAlgorithms = [{
   name: "Simple",
   description: "One point per character",
-  scoreFunction: simpleScore
+  scoringFunction: simpleScore
 }, 
 { name: "Vowel Bonus",
   description: "Vowels are worth 3 points",
-  scoreFunction: vowelBonusScore
+  scoringFunction: vowelBonusScore
 }, 
 { name: "Scrabble",
   description: "Uses scrabble point system",
-  scoreFunction: scrabbleScore
+  scoringFunction: scrabbleScore
 }];
 
 function scorerPrompt() {
@@ -103,8 +103,8 @@ function scorerPrompt() {
     }
     userSelect = Number(input.question("Enter 0, 1, or 2: "));
   }
-  console.log(`Score for ${word}: ${scoringAlgorithms[userSelect].scoreFunction()}`)
-  return scoringAlgorithms[userSelect].scoreFunction();
+  console.log(`Score for ${word}: ${scoringAlgorithms[userSelect].scoringFunction()}`)
+  return scoringAlgorithms[userSelect].scoringFunction();
 }
 
 function transform() {
