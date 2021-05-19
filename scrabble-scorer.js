@@ -58,8 +58,8 @@ function vowelBonusScore(){
   for (let i = 0; i < word.length; i++){
     if (vowels.includes(word[i])){
       score += 3;
-    } else if (word[i] === ' '){
-      score = score;
+    // } else if (word[i] === ' '){
+    //   score = score;
     } else {
       score++;
     }
