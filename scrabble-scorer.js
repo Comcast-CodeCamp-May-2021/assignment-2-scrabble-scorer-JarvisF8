@@ -42,9 +42,6 @@ let simpleScore = function(){
   let score = 0;
   word.toUpperCase();
   for (i in word){
-    if (word[i] === ' '){
-      score = score;
-    } else {
       score++;
     }
   }
@@ -58,8 +55,6 @@ function vowelBonusScore(){
   for (let i = 0; i < word.length; i++){
     if (vowels.includes(word[i])){
       score += 3;
-    // } else if (word[i] === ' '){
-    //   score = score;
     } else {
       score++;
     }
