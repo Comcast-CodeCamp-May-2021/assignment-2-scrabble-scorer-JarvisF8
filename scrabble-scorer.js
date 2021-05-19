@@ -35,41 +35,34 @@ let word = "";
 function initialPrompt() {
   console.log("Let's play some scrabble!\n");
   word = (input.question("Enter a word to score: "));
-  // console.log(oldScrabbleScorer(userWord));
-  // console.log(simpleScore(userWord));
-  // console.log(vowelBonusScore(userWord));
-  // console.log(scrabbleScore(userWord));
   return word;
 }
 
 let simpleScore = function(){
   let score = 0;
   for (i in word){
-    score++;
+    if (word[i] === ' '){
+      score = score;
+    } else {
+      score++;
+    }
   }
-  // console.log(score);
   return score;
 }
 
 function vowelBonusScore(){
   word = word.toUpperCase();
   let score = 0;
+  let vowels = ['A', 'E', 'I', 'O', 'U'];
   for (i in word){
-    if (word[i] === 'A'){
+    if (vowels.includes(word[i])){
       score += 3;
-    } else if (word[i] === 'E') {
-      score += 3
-    }  else if (word[i] === 'I') {
-      score += 3
-    } else if (word[i] === 'O') {
-      score += 3
-    } else if (word[i] === 'U') {
-      score += 3
+    } else if (word[i] === ' '){
+      score = score;
     } else {
       score++;
     }
   }
-  // console.log(score);
   return score;
 }
 
@@ -83,7 +76,6 @@ let scrabbleScore = function(){
 		 }
 	  }
 	}
-	// console.log(score);
   return score;
 };
 
@@ -102,22 +94,20 @@ const scoringAlgorithms = [{
 }];
 
 function scorerPrompt() {
-  let select;
+  let userSelect;
   console.log("Which scoring algorithm would you like to use?\n");
-  while (select < 0 || select > 2 || isNaN(select)){
+  while (userSelect < 0 || userSelect > 2 || isNaN(userSelect)){
     for(i in scoringAlgorithms){
       console.log(`${i} - ${scoringAlgorithms[i].name}: ${scoringAlgorithms[i].description}`);
     }
-    select = Number(input.question("Enter 0, 1, or 2: "));
+    userSelect = Number(input.question("Enter 0, 1, or 2: "));
   }
-  console.log(`Score for ${word}: ${scoringAlgorithms[select].scoreFunction()}`)
-  return scoringAlgorithms[select].scoreFunction();
+  console.log(`Score for ${word}: ${scoringAlgorithms[userSelect].scoreFunction()}`)
+  return scoringAlgorithms[userSelect].scoreFunction();
 }
 
-let newScore = {};
-
 function transform() {
-
+  let newScore = {};
   let values = "";
   let keys = "";
   let valuesArray = [];
