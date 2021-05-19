@@ -38,12 +38,12 @@ function initialPrompt() {
   return word;
 }
 
-let simpleScore = function(){
+let simpleScore = function(word){
   let score = word.length;
   return score;
 }
 
-function vowelBonusScore(){
+function vowelBonusScore(word){
   word = word.toUpperCase();
   let score = 0;
   let vowels = ['A', 'E', 'I', 'O', 'U'];
@@ -57,7 +57,7 @@ function vowelBonusScore(){
   return score;
 }
 
-let scrabbleScore = function(){
+let scrabbleScore = function(word){
   word = word.toLowerCase();
 	score = 0;
 	for (let i = 0; i < word.length; i++) {
