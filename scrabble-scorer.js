@@ -44,7 +44,6 @@ let simpleScore = function(){
   for (i in word){
       score++;
     }
-  }
   return score;
 }
 
