@@ -40,6 +40,7 @@ function initialPrompt() {
 
 let simpleScore = function(){
   let score = 0;
+  word.toUpperCase();
   for (i in word){
     if (word[i] === ' '){
       score = score;
@@ -133,7 +134,7 @@ function transform() {
 let newPointStructure = transform(oldPointStructure);
 
 function runProgram() {
-  // console.clear();
+  console.clear();
   initialPrompt();
   scorerPrompt();
 }
