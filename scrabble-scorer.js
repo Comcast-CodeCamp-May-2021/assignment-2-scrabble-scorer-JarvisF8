@@ -39,11 +39,7 @@ function initialPrompt() {
 }
 
 let simpleScore = function(){
-  let score = 0;
-  word.toUpperCase();
-  for (i in word){
-      score++;
-    }
+  let score = word.length;
   return score;
 }
 
