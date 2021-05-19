@@ -55,7 +55,7 @@ function vowelBonusScore(){
   word = word.toUpperCase();
   let score = 0;
   let vowels = ['A', 'E', 'I', 'O', 'U'];
-  for (i in word){
+  for (let i = 0; i < word.length; i++){
     if (vowels.includes(word[i])){
       score += 3;
     } else if (word[i] === ' '){
